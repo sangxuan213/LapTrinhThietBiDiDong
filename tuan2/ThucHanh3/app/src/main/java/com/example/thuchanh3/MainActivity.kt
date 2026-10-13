@@ -74,8 +74,14 @@ class MainActivity : AppCompatActivity() {
             return
         }
 
-        val num1 = num1Str.toDoubleOrNull() ?: 0.0
-        val num2 = num2Str.toDoubleOrNull() ?: 0.0
+        val num1 = num1Str.toDoubleOrNull()
+        val num2 = num2Str.toDoubleOrNull()
+
+        if (num1 == null || num2 == null) {
+            tvResult.text = "Kết quả: Lỗi không nhập chữ"
+            return
+        }
+
         var result = 0.0
 
         when (selectedOperator) {
